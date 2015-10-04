@@ -7,13 +7,19 @@ class GameOfLife {
    * @var \GameOfLife\Board
    */
   private $board;
+  /**
+   * @var \GameOfLife\Rule[]
+   */
+  private $rules;
 
   /**
    * GameOfLife constructor.
    * @param \GameOfLife\Board $board
+   * @param \GameOfLife\Rule[] $rules
    */
-  public function __construct($board) {
+  public function __construct(Board $board, $rules) {
     $this->board = $board;
+    $this->rules = $rules;
   }
 
   /**
@@ -24,5 +30,6 @@ class GameOfLife {
   }
 
   public function iterate() {
+    $this->board->iterate($this->rules);
   }
 }

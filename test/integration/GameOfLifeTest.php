@@ -17,7 +17,8 @@ class GameOfLifeTest extends \PHPUnit_Framework_TestCase {
     /** @var Square[] $squares */
     $squares = [$square];
     $board = new Board($squares);
-    $gameOfLife = new GameOfLife($board);
+    $rules = [];
+    $gameOfLife = new GameOfLife($board, $rules);
 
     $gameOfLife->iterate();
 
