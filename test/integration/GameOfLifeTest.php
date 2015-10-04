@@ -1,6 +1,6 @@
 <?php
 
-namespace GameOfLife\Test;
+namespace GameOfLife\Test\Integration;
 
 use GameOfLife\Board;
 use GameOfLife\DeadCell;
@@ -18,6 +18,8 @@ class GameOfLifeTest extends \PHPUnit_Framework_TestCase {
     $squares = [$square];
     $board = new Board($squares);
     $gameOfLife = new GameOfLife($board);
+
+    $gameOfLife->iterate();
 
     $this->assertEquals(
       new Board([new Square(new DeadCell())]),
